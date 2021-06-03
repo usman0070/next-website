@@ -1,16 +1,61 @@
-html,
+* {
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 200vh;
+}
+@keyframes animate {
+  0%,
+  10%,
+  30% {
+    left: -100px;
+    opacity: 0;
+  }
+  40%,
+  50% {
+    opacity: 0.9;
+  }
+  90% {
+    left: 0px;
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+.open {
+  animation: animate 0.5s ease-in-out;
+}
+.wrapper {
+  background-color: rgba(0, 0, 0, 0.03);
+  width: 100%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.wrapper.active {
+  background-color: inherit;
 }
+.video {
+  width: 100%;
+  height: 100%;
+  /* background-color: black; */
+  position: absolute;
+  top: 0;
+  left: 0;
 
-* {
-  box-sizing: border-box;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  z-index: 10;
+}
+.closed {
+  opacity: 0.55;
+  background-color: black;
+}
+.closed > button {
+  color: "#788FB5";
 }
